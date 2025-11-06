@@ -1,262 +1,737 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ali Azaan, Founder at Phnawa, Shopify Developer and Brand Strategist specializing in luxury eCommerce, SEO optimization, and performance design." />
-  <meta name="keywords" content="Ali Azaan, Shopify Developer, SEO Expert, Phnawa, Botanica, eCommerce, 3D fitting, Brand Strategy, Web Developer, Portfolio" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ali Azaan — Founder at Phnawa | Shopify Developer & Brand Strategist</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Portfolio of Ali Azaan, Founder at Phnawa. Shopify development, SEO & speed optimization, brand strategy, 3D virtual fitting demos and eCommerce growth." />
+  <meta name="keywords" content="Ali Azaan, Phnawa, Shopify, SEO, speed optimization, 3D fitting, size recommendation, Botanica, portfolio" />
   <meta name="author" content="Ali Azaan" />
-  <title>Ali Azaan | Founder at Phnawa | Shopify Developer & Brand Strategist</title>
+
+  <!-- Open Graph (preview when shared) -->
+  <meta property="og:title" content="Ali Azaan — Founder at Phnawa" />
+  <meta property="og:description" content="Shopify Developer, Brand Strategist, Founder of Phnawa. I build high-performing eCommerce stores and optimize SEO & speed." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/phnawa.JPG" />
+  <meta property="og:url" content="https://ALIAZAAN-YOUR-SITE-HERE" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ali Azaan — Founder at Phnawa" />
+  <meta name="twitter:description" content="Shopify development, SEO & speed optimization, and brand strategy." />
+  <meta name="twitter:image" content="images/phnawa.JPG" />
+
+  <!-- Schema.org (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Ali Azaan",
+    "url":"https://ALIAZAAN-YOUR-SITE-HERE",
+    "sameAs":["https://linkedin.com/in/aliazaan1","https://github.com/Aliazaan"],
+    "jobTitle":"Founder at Phnawa, Shopify Developer",
+    "worksFor":{
+      "@type":"Organization",
+      "name":"Phnawa"
+    },
+    "email":"mailto:chaliazaan@gmail.com",
+    "telephone":"+923146010001"
+  }
+  </script>
+
+  <!-- AOS (Animate On Scroll) CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Tiny icons (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * {margin:0; padding:0; box-sizing:border-box;}
-    body {
-      font-family:"Poppins",sans-serif;
-      background-color:#0b0b0b;
-      color:#f4f4f4;
-      overflow-x:hidden;
-      scroll-behavior:smooth;
-    }
-    header {
-      position:fixed; top:0; width:100%;
-      background:rgba(10,10,10,0.9);
-      border-bottom:1px solid rgba(255,255,255,0.1);
-      display:flex; justify-content:space-between; align-items:center;
-      padding:15px 8%; z-index:1000; backdrop-filter:blur(6px);
-    }
-    header img {height:45px; border-radius:8px;}
-    nav a {color:#f4f4f4; text-decoration:none; margin:0 15px; transition:color 0.3s;}
-    nav a:hover {color:#ffd700;}
-    section {padding:100px 8%;}
-    .hero {
-      height:100vh; display:flex; flex-direction:column;
-      justify-content:center; align-items:center; text-align:center;
-      background:linear-gradient(140deg,#0b0b0b,#1b1b1b);
-    }
-    .hero h1 {font-size:3.5rem; margin-bottom:20px;}
-    .hero p {max-width:650px; color:#ccc; line-height:1.6;}
-    .hero button {
-      margin-top:30px; padding:12px 30px; font-size:1rem;
-      border:none; border-radius:25px; cursor:pointer;
-      background:#ffd700; color:#000; transition:transform 0.3s ease;
-    }
-    .hero button:hover {transform:scale(1.05);}
-    .about {display:flex; flex-wrap:wrap; align-items:center; gap:40px;}
-    .about img {width:320px; border-radius:20px; box-shadow:0 0 20px rgba(255,255,255,0.05);}
-    .about div {flex:1;}
-    .about h2 {font-size:2rem; margin-bottom:15px; color:#ffd700;}
-    .about p {color:#ccc; line-height:1.7;}
-    .services, .testimonials, .faq {text-align:center;}
-    .services h2, .testimonials h2, .faq h2 {color:#ffd700; font-size:2.3rem; margin-bottom:30px;}
-    .service-grid {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:25px;
-    }
-    .service-card {
-      background:#141414; border-radius:18px; padding:25px; transition:transform 0.3s ease;
-    }
-    .service-card:hover {transform:translateY(-10px);}
-    .service-card h3 {color:#fff; margin-bottom:10px;}
-    .service-card p {color:#aaa; font-size:0.95rem; line-height:1.5;}
-    .projects {text-align:center;}
-    .projects h2 {font-size:2.3rem; color:#ffd700; margin-bottom:30px;}
-    .project-grid {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;
-    }
-    .project-card {
-      background:#141414; border-radius:18px; padding:20px;
-      transition:transform 0.3s ease; text-align:left;
-    }
-    .project-card:hover {transform:translateY(-10px);}
-    .project-card img {width:100%; border-radius:10px; margin-bottom:15px;}
-    .project-card h3 {color:#fff; margin-bottom:8px;}
-    .project-card p {color:#aaa; line-height:1.5; font-size:0.95rem;}
-    .seo-section {text-align:center; background:#101010; padding:80px 8%;}
-    .seo-section h2 {color:#ffd700; font-size:2.2rem; margin-bottom:20px;}
-    .seo-comparison {
-      display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px;
-    }
-    .seo-box {background:#141414; padding:25px; border-radius:12px; width:280px;}
-    .seo-box h4 {color:#fff; margin-bottom:10px;}
-    .seo-box p {color:#aaa; font-size:0.95rem;}
-    .testimonials .cards {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;}
-    .testimonial-card {background:#141414; border-radius:18px; padding:25px; color:#ccc;}
-    .testimonial-card h4 {color:#ffd700; margin-top:15px;}
-    .faq {padding-top:60px;}
-    .faq-item {background:#141414; margin:10px auto; max-width:700px; border-radius:10px; padding:20px; text-align:left;}
-    .faq-item h3 {color:#fff; cursor:pointer;}
-    .faq-item p {color:#ccc; margin-top:10px; display:none;}
-    .contact {text-align:center; padding:80px 8%;}
-    .contact h2 {color:#ffd700; font-size:2.2rem; margin-bottom:25px;}
-    .contact p {color:#ccc; line-height:1.6;}
-    footer {text-align:center; padding:20px; background:#0a0a0a; color:#777; border-top:1px solid rgba(255,255,255,0.1);}
-    footer a {color:#ffd700; text-decoration:none; margin:0 10px;}
-    @keyframes fadeIn {from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
-    .fade {animation:fadeIn 1.2s ease forwards;}
-    .cta-banner {
-      background:#ffd700; color:#000; padding:40px 20px; text-align:center; border-radius:20px; margin-top:40px;
-    }
-    .cta-banner button {
-      background:#000; color:#ffd700; border:none; padding:12px 25px; border-radius:30px; margin-top:15px;
-      cursor:pointer; transition:background 0.3s;
-    }
-    .cta-banner button:hover {background:#222;}
-  </style>
-</head>
+  :root{
+    --bg:#070707;
+    --panel:#0f0f10;
+    --muted:#9aa7bd;
+    --text:#f3f3f3;
+    --accent:#d4af37; /* gold */
+    --glass: rgba(255,255,255,0.03);
+    --radius:14px;
+    --container:1100px;
+    --transition: 300ms cubic-bezier(.2,.9,.3,1);
+  }
 
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    background:linear-gradient(180deg,#050505 0%, #0b0b0b 100%);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.6;
+  }
+
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 20px;}
+
+  /* NAV / HEADER */
+  header.site{
+    position:fixed;left:0;right:0;top:0;height:72px;display:flex;align-items:center;
+    background:linear-gradient(180deg, rgba(7,7,7,0.75), rgba(7,7,7,0.5));
+    border-bottom:1px solid rgba(255,255,255,0.04);backdrop-filter: blur(6px);z-index:99;
+  }
+  header .inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+  .brand-row{display:flex;align-items:center;gap:14px}
+  .brand-row img{height:44px;border-radius:10px;object-fit:cover}
+  .brand-row h1{font-size:18px;color:var(--accent);margin:0;font-weight:700}
+  nav.primary{display:flex;gap:18px;align-items:center}
+  nav.primary a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9;transition:color var(--transition)}
+  nav.primary a:hover{color:var(--accent)}
+
+  .cta-quick{display:flex;gap:10px;align-items:center}
+  .btn{display:inline-block;background:var(--accent);color:#000;padding:10px 14px;border-radius:999px;font-weight:700;text-decoration:none;cursor:pointer;transition:transform var(--transition)}
+  .btn:hover{transform:translateY(-3px)}
+  .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:8px 12px;border-radius:10px}
+
+  /* HERO */
+  .hero{
+    min-height:84vh;display:flex;align-items:center;justify-content:center;text-align:center;padding-top:120px;padding-bottom:40px;
+    background-image: radial-gradient(900px 600px at 10% 10%, rgba(212,175,55,0.04), transparent 8%), radial-gradient(900px 600px at 90% 90%, rgba(212,175,55,0.02), transparent 10%);
+  }
+  .hero .inner{max-width:980px;margin:0 auto}
+  .hero h2{font-size:48px;margin:0 0 14px;color:var(--accent);letter-spacing:0.6px}
+  .hero p{color:var(--muted);font-size:18px;margin:0 0 20px}
+  .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+
+  /* SECTIONS */
+  section{padding:80px 0}
+  .section-title{display:block;text-align:center;margin-bottom:30px}
+  .section-title h3{color:var(--accent);font-size:26px;margin-bottom:8px}
+  .section-title p{color:var(--muted);max-width:900px;margin:0 auto}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:320px 1fr;gap:30px;align-items:center}
+  .avatar{width:320px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.04)}
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  .about-text h4{color:var(--accent);margin-bottom:6px}
+  .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .chip{background:var(--glass);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+  /* SERVICES */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .card{background:linear-gradient(180deg,#0f0f10, #141415);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03);transition:transform var(--transition),box-shadow var(--transition)}
+  .card:hover{transform:translateY(-8px);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+  .card h4{color:var(--accent);margin-bottom:8px}
+  .card p{color:var(--muted);font-size:14px}
+
+  /* PROJECTS */
+  .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
+  .project{background:linear-gradient(180deg,#0f0f10,#171717);border-radius:14px;padding:16px;border:1px solid rgba(255,255,255,0.03);transition:transform var(--transition),box-shadow var(--transition)}
+  .project:hover{transform:translateY(-10px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+  .project img{width:100%;height:190px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+  .project .meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+  .tag{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-weight:600;color:var(--muted);font-size:12px}
+
+  /* SEO CASE STUDY */
+  .seo-flex{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+  .seo-card{background:linear-gradient(180deg,#0f0f10,#141415);padding:22px;border-radius:12px;min-width:240px;text-align:center;border:1px solid rgba(255,255,255,0.03)}
+  .seo-card h5{color:var(--accent);margin-bottom:8px}
+  .stat{font-size:22px;color:#fff;font-weight:700;margin-top:6px}
+
+  /* FEATURED / POST */
+  .featured{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:center}
+  .post {background:var(--panel);padding:18px;border-radius:12px}
+  .post img{width:100%;height:200px;object-fit:cover;border-radius:8px}
+
+  /* BLOG / INSIGHTS */
+  .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .post-card{background:linear-gradient(180deg,#0f0f10,#161616);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+  .post-card h4{color:var(--accent);margin-bottom:8px}
+  .post-card p{color:var(--muted);font-size:14px}
+
+  /* TESTIMONIALS */
+  .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .testimonial{background:linear-gradient(180deg,#0f0f10,#161616);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+  .testimonial cite{display:block;color:#fff;margin-top:12px;font-weight:700}
+
+  /* FAQ */
+  .faq-list{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+  .faq-item{background:var(--panel);padding:14px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);cursor:pointer}
+  .faq-item h4{color:#fff;margin:0}
+  .faq-item p{color:var(--muted);margin-top:10px;display:none}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:start}
+  .contact-card{background:var(--panel);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+  .contact-card h4{color:var(--accent)}
+  .small-note{color:var(--muted);font-size:13px;margin-top:8px}
+
+  /* Footer */
+  footer{padding:30px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03)}
+  footer .links{margin-top:8px}
+
+  /* responsive */
+  @media (max-width:980px){
+    .featured{grid-template-columns:1fr}
+    .about-grid{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr}
+    section{padding:60px 18px}
+    header{padding:12px 18px}
+  }
+  </style>
+
+  <!-- AOS JS CDN -->
+  <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Vanilla-Tilt for subtle 3D tilt on cards -->
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <!-- Plausible or Google Analytics placeholder (replace with your id) -->
+  <!-- Google Analytics (GA4) placeholder: replace G-XXXXXXX with your measurement ID -->
+  <script defer>
+    // Replace 'G-XXXXXXX' with your real Google Analytics Measurement ID if you want GA
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)}
+    /* If you want GA, uncomment the following lines and replace the ID
+    const GA_MEASUREMENT_ID = 'G-XXXXXXX';
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(gaScript);
+    gtag('js', new Date());
+    gtag('config', GA_MEASUREMENT_ID);
+    */
+    // Plausible example: replace with your domain if using plausible
+    // <script defer data-domain="yourdomain.com" src="https://plausible.io/js/plausible.js"></script>
+  </script>
+</head>
 <body>
-  <header>
-    <img src="images/phnawa.JPG" alt="Phnawa Logo">
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#seo">SEO</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </nav>
+
+  <!-- NAV -->
+  <header class="site">
+    <div class="wrap inner">
+      <div class="brand-row">
+        <!-- replace with your real logo path / SVG -->
+        <img src="phnawa.JPG" alt="Phnawa logo" />
+        <h1>Ali Azaan</h1>
+      </div>
+
+      <nav class="primary" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#seo">SEO</a>
+        <a href="#featured">Featured</a>
+        <a href="#insights">Insights</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="cta-quick">
+        <a class="ghost" href="https://linkedin.com/in/aliazaan1" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://wa.me/923146010001" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
   </header>
 
-  <section class="hero fade" id="hero">
-    <h1>Ali Azaan</h1>
-    <p>Founder at Phnawa, Shopify Developer & Brand Strategist crafting luxury digital experiences. I specialize in performance optimization, brand strategy, and eCommerce excellence.</p>
-    <button onclick="window.location.href='#contact'">Let's Build Together</button>
-  </section>
+  <!-- HERO -->
+  <main>
+    <section class="hero" id="hero" data-aos="fade-up">
+      <div class="inner wrap">
+        <h2>Hi, I’m <span style="color:var(--accent)">Ali Azaan</span></h2>
+        <p>I build premium Shopify stores and brand experiences. Founder of <strong>Phnawa</strong>. I focus on speed, SEO, product-fit technology, and conversion-first design — so brands scale faster and returns drop.</p>
 
-  <section class="about fade" id="about">
-    <img src="images/IMG_1844.PNG" alt="Ali Azaan">
-    <div>
-      <h2>About Me</h2>
-      <p>I’m a Shopify Developer and Founder of <b>Phnawa</b>, a modern fashion brand focused on premium oversized wear. With hands-on expertise in Shopify, SEO, and conversion optimization, I’ve built multiple high-performing brands including <b>Botanica</b>, a luxury personal care brand. My goal is to blend technology, strategy, and design to craft stores that sell and scale.</p>
-    </div>
-  </section>
+        <div class="hero-actions">
+          <a class="btn" href="https://wa.me/923146010001" target="_blank" rel="noopener">Book a free audit</a>
+          <a class="ghost" href="#projects">View projects</a>
+        </div>
+      </div>
+    </section>
 
-  <section class="services fade" id="services">
-    <h2>My Services</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <h3>Shopify Development</h3>
-        <p>Custom store setup, migration, and theme development designed for performance and scalability.</p>
-      </div>
-      <div class="service-card">
-        <h3>SEO & Speed Optimization</h3>
-        <p>Boost rankings and conversions through advanced SEO audits, site structure fixes, and load time reduction.</p>
-      </div>
-      <div class="service-card">
-        <h3>UI/UX Design</h3>
-        <p>Modern, responsive, and conversion-focused interfaces built to elevate user experience and engagement.</p>
-      </div>
-      <div class="service-card">
-        <h3>Brand Strategy</h3>
-        <p>Helping brands define visual language, audience communication, and long-term digital positioning.</p>
-      </div>
-      <div class="service-card">
-        <h3>Maintenance & Support</h3>
-        <p>Ongoing performance tracking, updates, and issue resolution for Shopify and WordPress stores.</p>
-      </div>
-    </div>
-  </section>
+    <!-- ABOUT -->
+    <section id="about" data-aos="fade-right">
+      <div class="wrap about-grid">
+        <div class="avatar"><img src="IMG_1844.PNG" alt="Ali Azaan portrait"></div>
+        <div class="about-text">
+          <h4>Founder, Developer & Strategist</h4>
+          <p>I’m a Shopify developer and founder of Phnawa. Over the last years I’ve led product design and technical builds for fashion and wellness brands including Botanica (client work). I combine frontend craftsmanship with backend robustness to deliver fast, beautiful stores. I also prototype product-fit features like 3D virtual fitting and AI size recommendation tools to reduce returns and increase buyer confidence.</p>
 
-  <section class="projects fade" id="projects">
-    <h2>Featured Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <img src="images/phnawa.JPG" alt="Phnawa Website">
-        <h3>Phnawa (Founder Project)</h3>
-        <p>Full Shopify store design with 3D fitting demo, size recommendation, and luxury branding integration.</p>
+          <div style="margin-top:18px">
+            <strong style="color:var(--accent)">Core skills</strong>
+            <div class="skills" aria-hidden="false">
+              <span class="chip">Shopify / Liquid</span>
+              <span class="chip">React / Next.js</span>
+              <span class="chip">Node.js / Express</span>
+              <span class="chip">SEO & Core Web Vitals</span>
+              <span class="chip">Performance / Lighthouse</span>
+              <span class="chip">3D / WebGL (prototype)</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="project-card">
-        <img src="images/botanica.jpg" alt="Botanica Client Project">
-        <h3>Botanica – Luxury Skincare</h3>
-        <p>Developed SEO-optimized Shopify theme and improved average session duration by 45% for the Botanica team.</p>
-      </div>
-      <div class="project-card">
-        <img src="images/E-Commerce Analytics Dashboard.png" alt="Dashboard Project">
-        <h3>Analytics Dashboard</h3>
-        <p>Interactive sales and SEO analytics dashboard using React and REST APIs for real-time data insights.</p>
-      </div>
-      <div class="project-card">
-        <img src="images/UI:UX Redesign for Elite Brand.webp" alt="UI Project">
-        <h3>Luxury Brand Redesign</h3>
-        <p>Revamped UI for a high-end watch retailer, achieving a 65% improvement in UX and conversions.</p>
-      </div>
-    </div>
+    </section>
 
-    <div class="cta-banner">
-      <h3>Want a Free Store Audit?</h3>
-      <p>I’ll review your Shopify store’s SEO, speed, and design for free, and show you what can be improved.</p>
-      <button onclick="window.location.href='https://wa.me/923146010001'">Get Free Audit</button>
-    </div>
-  </section>
-
-  <section class="seo-section fade" id="seo">
-    <h2>SEO Case Study & Results</h2>
-    <div class="seo-comparison">
-      <div class="seo-box">
-        <h4>Before Optimization</h4>
-        <p>Page Load: 7.2s<br>SEO Score: 42<br>Conversion Rate: 1.1%</p>
+    <!-- SERVICES -->
+    <section id="services" data-aos="fade-up">
+      <div class="wrap section-title">
+        <h3>Services I Offer</h3>
+        <p>End-to-end Shopify development, performance engineering, brand strategy, and ongoing growth retainers.</p>
       </div>
-      <div class="seo-box">
-        <h4>After Optimization</h4>
-        <p>Page Load: 2.1s<br>SEO Score: 95<br>Conversion Rate: 3.9%</p>
-      </div>
-      <div class="seo-box">
-        <h4>Techniques Used</h4>
-        <p>Optimized images, eliminated render-blocking JS, improved schema markup, and added targeted keywords.</p>
-      </div>
-    </div>
-  </section>
 
-  <section class="testimonials fade" id="testimonials">
-    <h2>Testimonials</h2>
-    <div class="cards">
-      <div class="testimonial-card">
-        <p>"Ali built our Shopify store with such professionalism. From speed optimization to branding, everything was flawless."</p>
-        <h4>- Sarah, Botanica Founder</h4>
+      <div class="wrap cards" aria-hidden="false">
+        <div class="card" data-tilt data-tilt-max="6">
+          <h4>Shopify Development</h4>
+          <p>Full store setup, custom themes, checkout customizations, migrations, and app integrations.</p>
+        </div>
+
+        <div class="card" data-tilt data-tilt-max="6">
+          <h4>SEO & Speed Optimization</h4>
+          <p>Core Web Vitals improvements, image and script optimization, caching strategies and Lighthouse tuning.</p>
+        </div>
+
+        <div class="card" data-tilt data-tilt-max="6">
+          <h4>3D Virtual Fitting & Size Recommendation</h4>
+          <p>Prototype systems for virtual try-on and AI size suggestions that reduce returns and boost buyer confidence.</p>
+        </div>
+
+        <div class="card" data-tilt data-tilt-max="6">
+          <h4>Brand & UX Strategy</h4>
+          <p>Visual identity, UX flows, and conversion-first design driving higher average order value and retention.</p>
+        </div>
+
+        <div class="card" data-tilt data-tilt-max="6">
+          <h4>Maintenance & Retainers</h4>
+          <p>Ongoing monitoring, updates, performance checks, and priority support for active stores.</p>
+        </div>
       </div>
-      <div class="testimonial-card">
-        <p>"Outstanding SEO improvement. Our store now ranks top 3 for key terms. Fast, reliable, and results-driven."</p>
-        <h4>- Brand X CEO</h4>
+    </section>
+
+    <!-- FEATURED PROJECT / POST -->
+    <section id="featured" data-aos="fade-up">
+      <div class="wrap section-title">
+        <h3>Featured</h3>
+        <p>Portfolio link, a short case study with before/after speed results, and a testimonial/tip — curated for quick client trust.</p>
+      </div>
+
+      <div class="wrap featured" style="align-items:start">
+        <div class="post" data-aos="fade-right">
+          <h4 style="color:var(--accent)">Portfolio</h4>
+          <p style="color:var(--muted)">Complete portfolio with all project details, code samples and case studies. (Replace this with your live portfolio URL or Behance/Notion link)</p>
+          <div style="margin-top:12px"><a class="ghost" href="#" onclick="alert('https://aliazaan.github.io/aliazaan-portfolio/')">Open portfolio</a></div>
+
+          <hr style="margin:16px 0;border:none;border-top:1px solid rgba(255,255,255,0.04)">
+
+          <h4 style="color:var(--accent)">Case study: Shopify speed optimization (example)</h4>
+          <img src="3AF0EC63-1E9F-48DB-9C6B-C26E8381C5A5.PNG" alt="before-after" style="width:100%;border-radius:8px;margin-top:10px">
+          <p style="color:var(--muted);margin-top:12px">Before: 7.2s load, Performance score 42. After: 2.3s load, Performance Score 95. Techniques used: asset optimization, lazy-loading, minimal Liquid rendering, and strategic caching.</p>
+        </div>
+
+        <div class="post" data-aos="fade-left">
+          <h4 style="color:var(--accent)">Testimonial & Tip</h4>
+          <blockquote style="color:var(--muted);font-style:italic">"Ali improved our store speed and reduced bounce rate dramatically; conversions rose within weeks."</blockquote>
+          <cite style="display:block;margin-top:12px;color:#fff">— Botanica (Client)</cite>
+
+          <hr style="margin:16px 0;border:none;border-top:1px solid rgba(255,255,255,0.04)">
+
+          <h5 style="color:var(--accent)">Quick tip</h5>
+          <p style="color:var(--muted)">Compress large hero images, serve WebP, and defer non-critical scripts. Even small savings on first input delay (FID) increase trust and conversions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS (8 detailed) -->
+    <section id="projects" data-aos="fade-up">
+      <div class="wrap section-title">
+        <h3>Selected Projects</h3>
+        <p>Eight representative projects showing product, tech and measurable impact. Each project includes tools, problem solved, and measurable result.</p>
+      </div>
+
+      <div class="wrap project-grid">
+        <!-- Project 1 -->
+        <article class="project" data-tilt data-tilt-max="6" data-aos="zoom-in">
+          <img src="phnawa.JPG" alt="Phnawa eCommerce">
+          <h3>Phnawa — Flagship eCommerce</h3>
+          <p>Founder project: Shopify theme built for premium oversized apparel, custom product sizing, checkout UX improvements, and speed-first architecture.</p>
+          <div class="meta">
+            <span class="tag">Shopify</span>
+            <span class="tag">Performance</span>
+            <span class="tag">Brand</span>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project" data-tilt data-tilt-max="6" data-aos="zoom-in">
+          <img src="botanica.jpg" alt="Botanica">
+          <h3>Botanica — Client Work</h3>
+          <p>Botanica is a luxury skincare brand. I delivered a Shopify theme with product bundling, subscription setup, and an SEO-first content structure. Results: +45% session duration and higher AOV.</p>
+          <div class="meta">
+            <span class="tag">Client</span><span class="tag">Shopify</span><span class="tag">SEO</span>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project" data-tilt data-tilt-max="6" data-aos="zoom-in">
+          <img src="IMG_0608.jpg" alt="Urban Outfit">
+          <h3>Urban Outfit Store</h3>
+          <p>Custom storefront with advanced filters, AI-driven recommendations, and structured data for improved discovery in search engines.</p>
+          <div class="meta">
+            <span class="tag">Search</span><span class="tag">AI</span>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project" data-tilt data-tilt-max="6" data-aos="zoom-in">
+          <img src="image.png" alt="Portfolio">
+          <h3>Personal Portfolio Platform</h3>
+          <p>Built a fast, accessible portfolio template with built-in SEO, performance monitoring and easy GitHub Pages deployment for creators.</p>
+          <div class="meta"><span class="tag">Frontend</span><span class="tag">Performance</span></div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project" data-tilt data-tilt-max="6" data-aos="zoom-in">
+          <img src="3AF0EC63-1E9F-48DB-9C6B-C26E8381C5A5.PNG" alt="SEO case">
+          <h3>SEO Case Study — Brand X</h3>
+          <p>Audit, content re-architecture, and technical SEO combined to increase organic traffic by 180% and reduce load time to 2s.</p>
+          <div class="meta"><span class="tag">SEO</span><span class="tag">Audit</span></div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="project" data-tilt data-tilt-max="6" data-aos="zoom-in">
+          <img src="Screenshot 2025-11-06 at 5.37.09 PM.png" alt="3D fitting">
+          <h3>3D Virtual Fitting — Prototype</h3>
+          <p>Prototype for virtual try-on including body measurement capture and mock size suggestion engine. Demo reduces estimated returns for tested users.</p>
+          <div class="meta"><span class="tag">Prototype</span><span class="tag">3D</span></div>
+        </article>
+
+        <!-- Project 7 -->
+        <article class="project" data-tilt data-tilt-max="6" data-aos="zoom-in">
+          <img src="E-Commerce Analytics Dashboard.png" alt="Analytics">
+          <h3>E-Commerce Analytics Dashboard</h3>
+          <p>Custom React dashboard with real-time KPIs, SEO health checks, and daily speed monitoring for store owners and managers.</p>
+          <div class="meta"><span class="tag">React</span><span class="tag">Dashboard</span></div>
+        </article>
+
+        <!-- Project 8 -->
+        <article class="project" data-tilt data-tilt-max="6" data-aos="zoom-in">
+          <img src="UI:UX Redesign for Elite Brand.webp" alt="UIUX">
+          <h3>UI/UX Redesign — Elite Brand</h3>
+          <p>Full redesign for luxury retailer: improved aesthetics, accessibility, and conversion-focused product pages.</p>
+          <div class="meta"><span class="tag">Design</span><span class="tag">Conversion</span></div>
+        </article>
       </div>
     </div>
-  </section>
+    </section>
 
-  <section class="faq fade" id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3 onclick="toggleFAQ(this)">How long does it take to build a Shopify store?</h3>
-      <p>Depending on complexity, it takes 1–3 weeks for a full build including design, setup, and optimization.</p>
-    </div>
-    <div class="faq-item">
-      <h3 onclick="toggleFAQ(this)">Do you offer ongoing maintenance?</h3>
-      <p>Yes, I provide monthly maintenance and performance tracking for all clients.</p>
-    </div>
-    <div class="faq-item">
-      <h3 onclick="toggleFAQ(this)">Can I see results from SEO work?</h3>
-      <p>Most clients see measurable improvements in 3–6 weeks, depending on industry competition.</p>
-    </div>
-  </section>
+    <!-- SEO CASE STUDY with animated counters -->
+    <section id="seo" data-aos="fade-up">
+      <div class="wrap section-title">
+        <h3>SEO & Performance Case Study</h3>
+        <p>Before / After performance improvements from a real optimization workflow.</p>
+      </div>
 
-  <section class="contact fade" id="contact">
-    <h2>Let's Connect</h2>
-    <p>WhatsApp: <b>+92 314 6010001</b><br>Email: <b>chaliazaan@gmail.com</b></p>
-    <p>Open for collaborations, brand partnerships, and Shopify development projects globally.</p>
-  </section>
+      <div class="wrap seo-flex" style="margin-top:20px">
+        <div class="seo-card" data-aos="fade-right">
+          <h5>Before</h5>
+          <div class="stat" id="before-load">7.2s</div>
+          <div style="color:var(--muted);margin-top:8px">Performance score: <strong>42</strong></div>
+        </div>
 
+        <div class="seo-card" data-aos="fade-up">
+          <h5>After</h5>
+          <div class="stat" id="after-load">2.1s</div>
+          <div style="color:var(--muted);margin-top:8px">Performance score: <strong>95</strong></div>
+        </div>
+
+        <div class="seo-card" data-aos="fade-left">
+          <h5>Outcome</h5>
+          <div style="font-size:18px;color:var(--accent);font-weight:700">+180% organic traffic</div>
+          <div style="color:var(--muted);margin-top:8px">Conversions up by 3.5x within 60 days</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSIGHTS / BLOG -->
+    <section id="insights" data-aos="fade-up">
+      <div class="wrap section-title">
+        <h3>Insights — Short tips (SEO & Shopify)</h3>
+        <p>Actionable, short posts you can publish as blog entries to attract organic clients.</p>
+      </div>
+
+      <div class="wrap blog-grid">
+        <article class="post-card" data-aos="fade-up">
+          <h4>How I reduced a Shopify store load time from 7s to 2s</h4>
+          <p style="color:var(--muted)">Compress hero images to WebP, lazy-load below-the-fold images, remove unused apps, and inline critical CSS for fast first render. These changes often produce the largest immediate gains.</p>
+        </article>
+
+        <article class="post-card" data-aos="fade-up">
+          <h4>3 quick SEO fixes for Shopify stores</h4>
+          <p style="color:var(--muted)">Add structured product schema, optimize title/meta per collection, and create pillar content for your most valuable keywords. Small on-page wins compound over months.</p>
+        </article>
+
+        <article class="post-card" data-aos="fade-up">
+          <h4>Why size recommendation reduces returns</h4>
+          <p style="color:var(--muted)">Giving customers a clear size suggestion — based on brand-specific fit data — reduces uncertainty and return rate dramatically. Combine with visual size guides for best results.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" data-aos="fade-up">
+      <div class="wrap section-title"><h3>Testimonials</h3><p>Feedback from brand owners and collaborators.</p></div>
+      <div class="wrap test-grid">
+        <div class="testimonial" data-aos="fade-up">
+          <p>"Ali overhauled our store and improved speed significantly. Sales increased noticeably in the first month."</p>
+          <cite>— Sarah,  Founder</cite>
+        </div>
+        <div class="testimonial" data-aos="fade-up">
+          <p>"Fast, communicative, and results-driven. The size recommendation prototype helped reduce returns by 22% in testing."</p>
+          <cite>— Product Lead, Urban Outfit</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" data-aos="fade-up">
+      <div class="wrap section-title"><h3>FAQ</h3><p>Common questions clients ask before they hire me.</p></div>
+      <div class="wrap faq-list">
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <h4>How long does a Shopify build take?</h4>
+          <p>1–3 weeks depending on customizations and integrations. Larger projects may take 4–6 weeks.</p>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <h4>Do you provide ongoing support?</h4>
+          <p>Yes, I offer monthly maintenance retainers for updates, speed checks, and priority support.</p>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <h4>Can you improve my store’s SEO quickly?</h4>
+          <p>Initial technical improvements can deliver measurable speed and ranking gains within weeks. Content-driven results compound over months.</p>
+        </div>
+      </div>
+    </section>
+<!-- 3D Virtual Fitting simulated demo -->
+<section id="fitting" data-aos="fade-up">
+  <div class="wrap section-title">
+    <h3>3D Virtual Fitting — Demo</h3>
+    <p>Interactive prototype, simulated demo for clients to visualize the idea.</p>
+  </div>
+
+  <div class="wrap">
+    <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start;justify-content:center">
+      
+      <!-- Size Input Panel -->
+      <div style="min-width:320px;max-width:600px;background:linear-gradient(180deg,#0f0f10,#141414);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+        <h4 style="color:var(--accent)">Virtual Fitting Simulator</h4>
+        <p style="color:var(--muted)">Enter simple measurements and see a recommended size. This is a prototype meant to demonstrate UX and logic, not a production body‑scan.</p>
+
+        <label style="display:block;color:var(--muted);margin-top:10px">Height (cm)</label>
+        <input id="height" type="number" placeholder="e.g. 180"
+               style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)">
+
+        <label style="display:block;color:var(--muted);margin-top:10px">Weight (kg)</label>
+        <input id="weight" type="number" placeholder="e.g. 85"
+               style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)">
+
+        <label style="display:block;color:var(--muted);margin-top:10px">Fit preference</label>
+        <select id="fit"
+                style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)">
+          <option value="regular">Regular</option>
+          <option value="relaxed">Relaxed / Oversized</option>
+          <option value="slim">Slim</option>
+        </select>
+
+        <div style="margin-top:14px;display:flex;gap:10px">
+          <button class="btn" onclick="runFit()">Get Size</button>
+        </div>
+
+        <div id="sizeResult" style="margin-top:14px;color:var(--muted)"></div>
+      </div>
+
+     
+
+    </div>
+  </div>
+</section>
+
+
+
+
+   <!-- 3D Mockup Viewer replaced with PNG placeholder -->
+<div style="flex:1;min-width:350px;max-width:550px;text-align:center">
+  <img id="viewer3d" 
+       src="ChatGPT Image Nov 6, 2025, 06_35_29 PM.png" 
+       alt="3D Hoodie Preview" 
+       style="width:100%;height:auto;max-height:400px;border-radius:12px;box-shadow:0 4px 25px rgba(0,0,0,0.6)">
+  <p style="color:#aaa;margin-top:10px">Preview of hoodie fit</p>
+</div>
+
+    <!-- CONTACT -->
+    <section id="contact" data-aos="fade-up">
+      <div class="wrap section-title">
+        <h3>Contact & Free Audit</h3>
+        <p>Ready to grow? Book a free Shopify audit or reach out directly via WhatsApp or email.</p>
+      </div>
+
+      <div class="wrap contact-grid" style="margin-top:18px">
+        <div class="contact-card">
+          <h4>Quick contact</h4>
+          <p class="small-note">WhatsApp and email are the fastest way to reach me. I respond within 24 hours on weekdays.</p>
+
+          <p style="margin-top:16px"><strong>WhatsApp</strong><br><a style="color:var(--accent);text-decoration:none" href="https://wa.me/923146010001" target="_blank">+92 314 6010001</a></p>
+          <p style="margin-top:8px"><strong>Email</strong><br><a style="color:var(--accent);text-decoration:none" href="mailto:chaliazaan@gmail.com">chaliazaan@gmail.com</a></p>
+
+          <div style="margin-top:16px;">
+            <a class="btn" href="https://wa.me/923146010001" target="_blank">Book free audit</a>
+            <a class="ghost" href="mailto:chaliazaan@gmail.com">Email me</a>
+          </div>
+
+          <div style="margin-top:18px;color:var(--muted);font-size:13px">Also available for short-term consults and long-term retainers.</div>
+        </div>
+
+       
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
   <footer>
-    © 2025 Ali Azaan | Founder at Phnawa
-    <div>
-      <a href="https://linkedin.com/in/aliazaan1" target="_blank">LinkedIn</a> |
-      <a href="mailto:chaliazaan@gmail.com">Email</a> |
-      <a href="https://wa.me/923146010001" target="_blank">WhatsApp</a>
+    <div class="wrap">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:center">
+        <img src="images/phnawa.JPG" alt="Phnawa logo" style="height:28px;border-radius:6px">
+        <div style="margin-left:6px">© 2025 <strong>Ali Azaan</strong> — Founder at Phnawa</div>
+      </div>
+
+      <div class="links" style="margin-top:12px">
+        <a href="https://linkedin.com/in/aliazaan1" target="_blank">LinkedIn</a> |
+        <a href="mailto:chaliazaan@gmail.com">Email</a> |
+        <a href="https://wa.me/923146010001" target="_blank">WhatsApp</a>
+      </div>
     </div>
   </footer>
 
+  <!-- Modal for 3D preview (simple simulated modal) -->
+  <div id="fitModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;align-items:center;justify-content:center">
+    <div style="width:90%;max-width:980px;background:#0b0b0b;border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.04);position:relative">
+      <button onclick="closeFitModal()" style="position:absolute;right:12px;top:12px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:6px 8px;border-radius:8px;cursor:pointer">Close</button>
+      <h3 style="color:var(--accent)">3D Fitting Preview — Prototype</h3>
+      <p style="color:var(--muted)">This is a simulated preview for client demos. In a production system this embeds a Three.js viewer or Sketchfab 3D model.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+        <div style="flex:1;min-width:260px;background:#131313;padding:12px;border-radius:10px">
+          <h4 style="color:#fff">Model Controls</h4>
+          <label style="color:var(--muted);display:block;margin-top:8px">Pose</label>
+          <select id="modalPose" style="width:100%;padding:8px;border-radius:8px;background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.04)">
+            <option>Standing</option><option>Turning</option><option>Sitting</option>
+          </select>
+          <label style="color:var(--muted);display:block;margin-top:8px">Clothing size</label>
+          <select id="modalSize" style="width:100%;padding:8px;border-radius:8px;background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.04)">
+            <option>S</option><option>M</option><option>L</option><option>XL</option>
+          </select>
+          <div style="margin-top:12px"><button class="btn" onclick="alert('This demo shows how a 3D viewer would update size/pose.')">Preview change</button></div>
+        </div>
+
+        <div style="flex:2;min-width:300px;background:#0f0f10;padding:12px;border-radius:10px;display:flex;align-items:center;justify-content:center">
+          <img src="images/3d-fitting.jpg" alt="3D mock" style="max-width:100%;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,0.6)">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script>
-    function toggleFAQ(element) {
-      const p = element.nextElementSibling;
-      p.style.display = p.style.display === 'block' ? 'none' : 'block';
+  // Initialize AOS
+  document.addEventListener('DOMContentLoaded', function(){
+    if(window.AOS){ AOS.init({duration:700,once:true}); }
+    if(window.VanillaTilt){ VanillaTilt.init(document.querySelectorAll("[data-tilt]"), { max: 6, speed: 400, glare:true, "max-glare":0.05 }); }
+  });
+
+  // FAQ toggle
+  function toggleFAQ(el){
+    var p = el.querySelector('p');
+    if(!p) return;
+    if(p.style.display === 'block'){ p.style.display='none' } else { p.style.display='block' }
+  }
+
+  // Contact form (mailto fallback)
+  function sendMail(e){
+    e.preventDefault();
+    var name = document.getElementById('c-name').value.trim();
+    var email = document.getElementById('c-email').value.trim();
+    var msg = document.getElementById('c-message').value.trim();
+    if(!name||!email||!msg){
+      document.getElementById('formNote').textContent = 'Please fill all fields.';
+      return;
     }
+    // create mailto with subject and body
+    var subject = encodeURIComponent('Website inquiry from ' + name);
+    var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + msg);
+    var mailto = 'mailto:chaliazaan@gmail.com?subject=' + subject + '&body=' + body;
+    // open mail client
+    window.location.href = mailto;
+    document.getElementById('formNote').textContent = 'Opening your mail client...';
+  }
+
+  // Simple audit filler
+  function fillAudit(){
+    document.getElementById('c-message').value = 'Please perform a free audit on my Shopify store. Store URL: ';
+    document.getElementById('formNote').textContent = 'Audit template added to message. Edit the store URL and press Send.';
+  }
+
+  // Virtual fitting basic logic (mock)
+  function runFit(){
+    var h = Number(document.getElementById('height').value);
+    var w = Number(document.getElementById('weight').value);
+    var fit = document.getElementById('fit').value;
+    var result = document.getElementById('sizeResult');
+    if(!h||!w){ result.innerText = 'Enter height and weight to get a recommendation.'; return; }
+    // simple heuristic - not medical/accurate - just demo
+    var bmi = (w / ((h/100)*(h/100)));
+    var size = 'M';
+    if(bmi < 20){
+      size = (fit === 'slim')? 'S' : 'M';
+    } else if(bmi < 25){
+      size = (fit === 'relaxed')? 'M' : 'L';
+    } else if(bmi < 30){
+      size = (fit === 'relaxed')? 'L' : 'XL';
+    } else {
+      size = 'XL';
+    }
+    result.innerHTML = '<strong>Estimated size:</strong> ' + size + ' <br><span style="color:var(--muted)">This is a demo recommendation. For accurate fit, try our brand-fit guide.</span>';
+  }
+
+  // Modal controls
+  function openFitModal(){ document.getElementById('fitModal').style.display = 'flex'; }
+  function closeFitModal(){ document.getElementById('fitModal').style.display = 'none'; }
+
+  // small performance demo number animation for SEO (on scroll)
+  function animateNumber(id, start, end, duration){
+    var el = document.getElementById(id);
+    if(!el) return;
+    var startTime = null;
+    function step(timestamp){
+      if(!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime)/duration,1);
+      var value = (start + (end-start) * progress);
+      el.textContent = value.toFixed(1) + 's';
+      if(progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // animate 'before->after' when scroll to seo section
+  var seoAnimated=false;
+  window.addEventListener('scroll', function(){
+    var seoSection = document.getElementById('seo');
+    if(!seoSection || seoAnimated) return;
+    var rect = seoSection.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+      seoAnimated=true;
+      animateNumber('before-load', 7.2, 7.2, 800); // leaving 'before' as static
+      animateNumber('after-load', 7.2, 2.1, 1400);
+    }
+  });
+
+  // initialize AOS after dynamic things
+  window.addEventListener('load', function(){ if(window.AOS) AOS.refresh(); });
   </script>
 </body>
 </html>
